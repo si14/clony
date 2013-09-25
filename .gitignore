@@ -1,0 +1,11 @@
+.vagrant
+vagrant_ansible_inventory_local
+vagrant_ansible_inventory_remote
+target/
+resources/public/js/main.js.*
+.lein-repl-history
+.nrepl-port
+resources/public/js/cljs
+resources/public/js/clojure
+resources/public/js/clony
+resources/public/js/dommy
