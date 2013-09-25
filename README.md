@@ -1,4 +1,5 @@
-# clony: a modern Clojure webapp example
+# clony
+## a modern Clojure webapp example
 
 This is an example of web application, based on http-kit and websockets and
 utilizing excellent Stuart Sierra's [workflow post](http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded).
