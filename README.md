@@ -5,11 +5,11 @@ utilizing excellent Stuart Sierra's [workflow post](http://thinkrelevance.com/bl
 
 To run this application:
 
-```
-lein cljsbuild once
-lein uberjar
-java -jar target/clony-0.1.0-SNAPSHOT-standalone.jar
-```
+1. `lein cljsbuild once`
+2. `lein uberjar`
+3. `java -jar target/clony-0.1.0-SNAPSHOT-standalone.jar`
+4. open `localhost:8081` in your browser
+5. click the pony to have some pony wisdom
 
 Please feel free to copy the code and use it in any way.
 
