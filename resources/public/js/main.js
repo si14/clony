@@ -499,6 +499,19 @@ goog.base = function(me, opt_methodName, var_args) {
 goog.scope = function(fn) {
   fn.call(goog.global)
 };
+goog.provide("goog.debug.Error");
+goog.debug.Error = function(opt_msg) {
+  if(Error.captureStackTrace) {
+    Error.captureStackTrace(this, goog.debug.Error)
+  }else {
+    this.stack = (new Error).stack || ""
+  }
+  if(opt_msg) {
+    this.message = String(opt_msg)
+  }
+};
+goog.inherits(goog.debug.Error, Error);
+goog.debug.Error.prototype.name = "CustomError";
 goog.provide("goog.string");
 goog.provide("goog.string.Unicode");
 goog.string.Unicode = {NBSP:"\u00a0"};
@@ -939,19 +952,6 @@ goog.string.parseInt = function(value) {
   }
   return NaN
 };
-goog.provide("goog.debug.Error");
-goog.debug.Error = function(opt_msg) {
-  if(Error.captureStackTrace) {
-    Error.captureStackTrace(this, goog.debug.Error)
-  }else {
-    this.stack = (new Error).stack || ""
-  }
-  if(opt_msg) {
-    this.message = String(opt_msg)
-  }
-};
-goog.inherits(goog.debug.Error, Error);
-goog.debug.Error.prototype.name = "CustomError";
 goog.provide("goog.asserts");
 goog.provide("goog.asserts.AssertionError");
 goog.require("goog.debug.Error");
@@ -25181,7 +25181,7 @@ clony.core.click_handler = function click_handler(evt) {
 clony.core.msg_handler = function msg_handler(raw_msg) {
   var msg = JSON.parse(raw_msg);
   var msg__$1 = cljs.core.js__GT_clj.call(null, msg, new cljs.core.Keyword(null, "keywordize-keys", "keywordize-keys", 4191781672), true);
-  return dommy.core.prepend_BANG_.call(null, document.getElementById("somediv"), cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "div", "div", 1014003715), (new cljs.core.Keyword(null, "msg", "msg", 1014012659)).call(null, msg__$1)], true))
+  return dommy.core.prepend_BANG_.call(null, document.getElementById("somediv"), cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "h3", "h3", 1013907517), (new cljs.core.Keyword(null, "msg", "msg", 1014012659)).call(null, msg__$1)], true))
 };
 clony.core.init = function init() {
   dommy.core.listen_BANG_.call(null, document.getElementById("rainbowdash"), new cljs.core.Keyword(null, "click", "click", 1108654330), clony.core.click_handler);

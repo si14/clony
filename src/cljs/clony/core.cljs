@@ -17,7 +17,7 @@
 (defn msg-handler [raw-msg]
   (let [msg (.parse js/JSON raw-msg)
         msg (js->clj msg :keywordize-keys true)]
-    (dommy/prepend! (sel1 :#somediv) [:div (:msg msg)])))
+    (dommy/prepend! (sel1 :#somediv) [:h3 (:msg msg)])))
 
 (defn init []
   (dommy/listen! (sel1 :#rainbowdash) :click click-handler)
