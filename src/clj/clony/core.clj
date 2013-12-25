@@ -2,6 +2,7 @@
   (:require [clony.lifecycle :as lifecycle])
   (:require [clony.http-server :as http-server]))
 
+;; TODO: backport config merging here
 (def default-config
   {:http {:port 8081}})
 
