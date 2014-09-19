@@ -1,4 +1,4 @@
-(defproject clony "0.1.0-SNAPSHOT"
+(defproject clony "0.1.0"
   :description "modern Clojure webapp example"
   :source-paths ["src/clj"]
   :plugins [[lein-cljsbuild "0.3.3"]
